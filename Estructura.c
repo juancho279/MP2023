@@ -9,7 +9,7 @@ struct perfiles
     char localidad[20];
     char perfil_usuario[13];
     char usuario[5];
-    char contraseña[8];
+    char contraseÃ±a[8];
 };
 struct perfiles *pty;
 
