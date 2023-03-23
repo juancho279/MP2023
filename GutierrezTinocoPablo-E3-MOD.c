@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <admin.h>
 int encontrar_usuario (usuario*, char*, char*, int*);
 int posicion (usuario*, char*, char*, int*);
 void registro (usuario*, int*);
@@ -41,7 +41,7 @@ if (encontrado==2){
     fflush(stdin);
     scanf ("%s",sino);
 
-    if ((strcmp(sino,"si")==0)|| (strcmp(sino,"Si")==0)){
+    if ((strcmp(sino,"si\n")==0)|| (strcmp(sino,"Si")==0)){
         registrar (vectorUsuarios, &num_Usuarios)
     }
     else{
@@ -68,8 +68,39 @@ if (encontrado==2){
 
 
 
+return 0;
+}
+int buscar_usuario() {
+int encontrado, i;
+for (i=0; i<*N_us; i++){
+    if ((strcmp(v_us[i].usuario)==0)&& (strcmp (v_us[i].contrasena)==0)){
+        encontrado = 1;
+        if (stcrmp((v_us+i)->perfil_usuario,"administrador")==0){
+            admin();
+            else{
+                usuario();
+            }
+        }
+        break;
+    }
+        else{
+
+            encontrado = 2;
+
+        }
+
+
+    }
+    return encontrado;
+
 
 }
+
+
+
+
+
+
 
 
 
